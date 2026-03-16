@@ -563,14 +563,23 @@
                 <div class="footer-form">
                     <h3>Send a Message</h3>
                     <form id="contactForm" action="https://formsubmit.co/dawitihunde@gmail.com" method="POST">
+                        <!-- Hidden fields for better emails -->
+                        <input type="hidden" name="_subject" value="New Inquiry from Website">
+                        <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+                        <!-- optional: your thank-you page -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <!-- disables reCAPTCHA if you want it simple -->
+                        <!-- Honeypot spam trap (bots fill it, humans don't see it) -->
+                        <input type="text" name="_gotcha" style="display:none !important;">
+
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                            <input type="text" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" placeholder="Phone Number" required>
+                            <input type="tel" name="phone" placeholder="Phone Number" required>
                         </div>
                         <div class="form-group">
-                            <textarea rows="3" placeholder="I am interested in..." required></textarea>
+                            <textarea rows="3" name="interest" placeholder="I am interested in..." required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary full-width">Submit Inquiry</button>
                     </form>
